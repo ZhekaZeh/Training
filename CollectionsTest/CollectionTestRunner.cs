@@ -7,7 +7,6 @@ using CollectionsTest.TestProcessors;
 
 namespace CollectionsTest
 {
-    //comment CT(1)
     class CollectionTestRunner<T> where T : new()
     {
         #region Private members
