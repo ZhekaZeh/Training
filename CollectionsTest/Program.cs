@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CollectionsTest
 {
-    //test1. Changed from VS2013
+    //changed from site(1)
     class Program
     {
         static void Main()
