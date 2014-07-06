@@ -7,13 +7,13 @@ using CollectionsTest.TestProcessors;
 
 namespace CollectionsTest
 {
-    class CollectionTestRunner<T> where T : IEnumerable, new()
+    class CollectionTestRunner<T> where T : new()
     {
         #region Private members
 
         private readonly Stopwatch _stopwatch;
         private readonly TestResults _testResults;
-        private ITestRunner _testRunner;
+        private ITestProcessor _testRunner;
 
         #endregion        
         

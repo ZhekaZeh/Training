@@ -4,7 +4,7 @@ using CollectionsTest.Interfaces;
 
 namespace CollectionsTest
 {
-    public class CollectionProcessor : ITestRunner
+    public class CollectionProcessor : ITestProcessor
     {
         #region Private members
 
@@ -21,7 +21,7 @@ namespace CollectionsTest
 
         #endregion
 
-        #region ITestRunner implementation
+        #region ITestProcessor implementation
 
         /// <summary>
         /// Adds the items to collection.

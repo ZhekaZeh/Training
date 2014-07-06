@@ -1,6 +1,6 @@
 ﻿namespace CollectionsTest.Interfaces
 {
-    public interface ITestRunner
+    public interface ITestProcessor
     {
         /// <summary>
         /// Fills the collection.

@@ -3,7 +3,7 @@ using CollectionsTest.Interfaces;
 
 namespace CollectionsTest.TestProcessors
 {
-    public class DictionaryProcessor : ITestRunner 
+    public class DictionaryProcessor : ITestProcessor 
     {
         #region Private members
 
@@ -24,7 +24,7 @@ namespace CollectionsTest.TestProcessors
 
         #endregion
 
-        #region ITestRunner implementation
+        #region ITestProcessor implementation
 
         /// <summary>
         /// Fills the collection.
