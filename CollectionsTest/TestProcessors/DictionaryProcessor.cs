@@ -50,6 +50,14 @@ namespace CollectionsTest.TestProcessors
             }
         }
 
+        public void RemoveItemsFromCollection(int removeItemCount)
+        {
+            for (int i = 0; i < removeItemCount; i++)
+            {
+                _dictionary.Remove(i);
+            }
+        }
+
         #endregion 
     }
 }

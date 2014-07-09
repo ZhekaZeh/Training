@@ -42,6 +42,7 @@ namespace CollectionsTest
         {
             FillCollection(TestConstants.CollectionSize);
             AddItems(TestConstants.AddCount);
+            RemoveItems(TestConstants.AddCount);
 
             return _testResults;
         }
@@ -66,6 +67,13 @@ namespace CollectionsTest
             _testRunner.AddItemsToCollection(addItemCount);
 
             _testResults.AddTimeMs = StopTimerAndGetTime();
+        }
+
+        private void RemoveItems(int removeItemCount)
+        {
+            StartTimer();
+            _testRunner.RemoveItemsFromCollection(removeItemCount);
+            _testResults.DelTimeMs = StopTimerAndGetTime();
         }
         
         private void StartTimer()

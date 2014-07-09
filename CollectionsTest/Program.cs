@@ -7,19 +7,19 @@ namespace CollectionsTest
     {
         static void Main()
         {
-            var testRestults = new Dictionary<string, TestResults>();
+            var testResults = new Dictionary<string, TestResults>();
             
             var listTester = new CollectionTestRunner<List<int>>();
-            var dictionaryTester = new CollectionTestRunner<Dictionary<int,int>>();
+            var dictionaryTester = new CollectionTestRunner<Dictionary<int, int>>();
             var hashSetTester = new CollectionTestRunner<HashSet<int>>();
-            var sortedListTester = new CollectionTestRunner<SortedList<int,int>>();
+            var sortedListTester = new CollectionTestRunner<SortedList<int, int>>();
             
-            testRestults.Add("List" , listTester.RunTests());
-            testRestults.Add("Dictionary", dictionaryTester.RunTests());
-            testRestults.Add("HashSet", hashSetTester.RunTests());
-            testRestults.Add("SortedList", sortedListTester.RunTests());
+            testResults.Add("List" , listTester.RunTests());
+            testResults.Add("Dictionary", dictionaryTester.RunTests());
+            testResults.Add("HashSet", hashSetTester.RunTests());
+            testResults.Add("SortedList", sortedListTester.RunTests());
 
-            OutputTestResults(testRestults);
+            OutputTestResults(testResults);
 
             Console.ReadLine();
         }
@@ -32,6 +32,7 @@ namespace CollectionsTest
 
                 Console.WriteLine("Fill time of {0} items is {1} ms", TestConstants.CollectionSize, testResult.Value.PopulationTimeMs);
                 Console.WriteLine("Add {0} items time is {1} ms", TestConstants.AddCount, testResult.Value.AddTimeMs);
+                Console.WriteLine("Remove {0} items time is {1} ms", TestConstants.AddCount, testResult.Value.DelTimeMs);
             }
         }
     }

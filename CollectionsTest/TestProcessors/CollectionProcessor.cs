@@ -45,6 +45,14 @@ namespace CollectionsTest
             AddItemsToCollection(itemCount);
         }
 
+        public void RemoveItemsFromCollection(int removeItemCount)
+        {
+            for (int i = 0; i < removeItemCount; i++)
+            {
+                _collection.Remove(i);
+            }
+        }
+
         #endregion
 
     }

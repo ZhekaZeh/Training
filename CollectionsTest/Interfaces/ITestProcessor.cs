@@ -13,5 +13,6 @@
         /// </summary>
         /// <param name="itemCount">The item count.</param>
         void AddItemsToCollection(int itemCount);
+        void RemoveItemsFromCollection(int itemCount);
     }
 }
