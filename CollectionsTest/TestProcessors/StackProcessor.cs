@@ -27,13 +27,13 @@ namespace CollectionsTest.TestProcessors
         #region ITestProcessor implementation
 
         /// <summary>
-        /// Adds the items to collection.
+        /// Adds the items to Stack.
         /// </summary>
         /// <param name="collection">The collection.</param>
         /// <param name="addItemCount">The add item count.</param>
-        public void AddItemsToCollection(int addItemCount)
+        public void AddItemsToCollection(int itemCount)
         {
-            for (int i = 0; i < addItemCount; i++)
+            for (int i = 0; i < itemCount; i++)
             {
                 _collection.Push(i);
             }
@@ -48,14 +48,18 @@ namespace CollectionsTest.TestProcessors
             AddItemsToCollection(itemCount);
         }
 
-        public void RemoveItemsFromCollection(int removeItemCount)
+        public void RemoveItemsFromCollection(int itemCount)
         {
-            for (int i = 0; i < removeItemCount; i++)
+            for (int i = 0; i < itemCount; i++)
             {
                 _collection.Pop();
             }
         }
 
+
         #endregion
+
+
+
     }
 }

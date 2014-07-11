@@ -14,12 +14,14 @@ namespace CollectionsTest
             var hashSetTester = new CollectionTestRunner<HashSet<int>>();
             var sortedListTester = new CollectionTestRunner<SortedList<int, int>>();
             var stackTester = new CollectionTestRunner<Stack<int>>();
-            
-            testResults.Add("List" , listTester.RunTests());
+            var queueTester = new CollectionTestRunner<Queue<int>>();
+
+            testResults.Add("List", listTester.RunTests());
             testResults.Add("Dictionary", dictionaryTester.RunTests());
             testResults.Add("HashSet", hashSetTester.RunTests());
             testResults.Add("SortedList", sortedListTester.RunTests());
             testResults.Add("Stack", stackTester.RunTests());
+            testResults.Add("Queue", queueTester.RunTests());
 
             OutputTestResults(testResults);
 

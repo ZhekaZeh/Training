@@ -49,6 +49,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test Entities\TestConstants.cs" />
     <Compile Include="Test Entities\TestResults.cs" />
+    <Compile Include="TestProcessors\HashSetProcessor.cs" />
+    <Compile Include="TestProcessors\QueueProcessor.cs" />
     <Compile Include="TestProcessors\StackProcessor.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ using CollectionsTest.TestProcessors;
 
 namespace CollectionsTest
 {
-    class CollectionTestRunner<T> where T : new()
+    class CollectionTestRunner<T> where T : IEnumerable, new()
     {
         #region Private members
 
@@ -93,6 +93,9 @@ namespace CollectionsTest
             var collection = new T();
             //a little reflection here. It is needed because many types are both ICollection and IDictionary, so that the compiler cannot choose
             //the type and therefore the code is not compiled
+
+
+
             if (collection is Stack<int>)
             {
                 _testRunner = new StackProcessor(collection as Stack<int>);
@@ -105,13 +108,24 @@ namespace CollectionsTest
                 return;
             }
 
-            if (collection is ICollection<int>)
+            if (collection is IList<int>)
             {
-                _testRunner = new CollectionProcessor(collection as ICollection<int>);
+                _testRunner = new CollectionProcessor(collection as IList<int>); 
                 return;
             }
 
-            throw new ArgumentException("Argument is neither of IDictionary nor of IList");
+            if (collection is HashSet<int>)
+            {
+                _testRunner = new HashSetProcessor(collection as HashSet<int>);
+                return;
+            }
+            if (collection is Queue<int>)
+            {
+                _testRunner = new QueueProcessor(collection as Queue<int>);
+                return;
+            }
+
+            throw new ArgumentException("Argument doesn't match to any from existing");
         } 
 
         #endregion

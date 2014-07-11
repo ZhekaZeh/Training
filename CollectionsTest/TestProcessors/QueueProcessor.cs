@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using CollectionsTest.Interfaces;
 
-namespace CollectionsTest
+namespace CollectionsTest.TestProcessors
 {
-    public class CollectionProcessor : ITestProcessor
+    class QueueProcessor : ITestProcessor
     {
-        #region Private members
+         #region Private members
 
-        private IList<int> _collection;
+        private Queue<int> _collection;
 
         #endregion
 
         #region Constructor
 
-        public CollectionProcessor(IList<int> collection)
+        public QueueProcessor(Queue<int> collection)
         {
             _collection = collection;
         }
@@ -24,7 +27,7 @@ namespace CollectionsTest
         #region ITestProcessor implementation
 
         /// <summary>
-        /// Adds the items to collection.
+        /// Adds the items to Queue.
         /// </summary>
         /// <param name="collection">The collection.</param>
         /// <param name="addItemCount">The add item count.</param>
@@ -32,7 +35,7 @@ namespace CollectionsTest
         {
             for (int i = 0; i < itemCount; i++)
             {
-                _collection.Add(i);
+                _collection.Enqueue(i);
             }
         }
 
@@ -49,15 +52,11 @@ namespace CollectionsTest
         {
             for (int i = 0; i < itemCount; i++)
             {
-                _collection.Remove(i);
+                _collection.Dequeue();
             }
         }
 
 
         #endregion
-
-
-
-        
     }
 }
