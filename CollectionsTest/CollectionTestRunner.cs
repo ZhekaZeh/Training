@@ -93,6 +93,12 @@ namespace CollectionsTest
             var collection = new T();
             //a little reflection here. It is needed because many types are both ICollection and IDictionary, so that the compiler cannot choose
             //the type and therefore the code is not compiled
+            if (collection is Stack<int>)
+            {
+                _testRunner = new StackProcessor(collection as Stack<int>);
+                return;
+            }
+
             if (collection is IDictionary)
             {
                 _testRunner = new DictionaryProcessor(collection as IDictionary);
