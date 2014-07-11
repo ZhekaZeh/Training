@@ -35,8 +35,8 @@ namespace CollectionsTest
                 Console.WriteLine("==={0}===", testResult.Key);
 
                 Console.WriteLine("Fill time of {0} items is {1} ms", TestConstants.CollectionSize, testResult.Value.PopulationTimeMs);
-                Console.WriteLine("Add {0} items time is {1} ms", TestConstants.AddCount, testResult.Value.AddTimeMs);
-                Console.WriteLine("Remove {0} items time is {1} ms", TestConstants.AddCount, testResult.Value.DelTimeMs);
+                Console.WriteLine("Add {0} items time is {1} ms", TestConstants.IterationCount, testResult.Value.AddTimeMs);
+                Console.WriteLine("Remove {0} items time is {1} ms", TestConstants.IterationCount, testResult.Value.DelTimeMs);
             }
         }
     }

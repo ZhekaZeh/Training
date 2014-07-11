@@ -9,7 +9,7 @@ namespace CollectionsTest.TestProcessors
 {
     class QueueProcessor : ITestProcessor
     {
-         #region Private members
+        #region Private members
 
         private Queue<int> _collection;
 

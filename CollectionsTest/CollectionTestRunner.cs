@@ -41,8 +41,8 @@ namespace CollectionsTest
         public TestResults RunTests()
         {
             FillCollection(TestConstants.CollectionSize);
-            AddItems(TestConstants.AddCount);
-            RemoveItems(TestConstants.AddCount);
+            AddItems(TestConstants.IterationCount);
+            RemoveItems(TestConstants.IterationCount);
 
             return _testResults;
         }
