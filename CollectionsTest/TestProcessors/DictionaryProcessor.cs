@@ -58,8 +58,24 @@ namespace CollectionsTest.TestProcessors
             }
         }
 
+        public void ReadValueFromItems(int itemCount)
+        {
+            object _temp;
+            for (int i = 0; i < itemCount; i++)
+            {
+                _temp = _dictionary[i];
+            }
+        }
+
+        public void RecordValueToItems(int itemCount)
+        {
+            for (int i = 0; i < itemCount + 1; i++)
+            {
+                _dictionary[i] = i++;
+            }
+        }
+
         #endregion 
-    
 
     }
 }

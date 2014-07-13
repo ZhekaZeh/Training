@@ -13,7 +13,12 @@
         /// </summary>
         /// <param name="itemCount">The item count.</param>
         void AddItemsToCollection(int itemCount);
+
         void RemoveItemsFromCollection(int itemCount);
+
+        void ReadValueFromItems(int itemCount);
+
+        void RecordValueToItems(int itemCount);
 
     }
 }

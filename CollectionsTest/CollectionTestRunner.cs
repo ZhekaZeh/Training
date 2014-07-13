@@ -14,6 +14,7 @@ namespace CollectionsTest
         private readonly Stopwatch _stopwatch;
         private readonly TestResults _testResults;
         private ITestProcessor _testRunner;
+        
 
         #endregion        
         
@@ -43,7 +44,8 @@ namespace CollectionsTest
             FillCollection(TestConstants.CollectionSize);
             AddItems(TestConstants.IterationCount);
             RemoveItems(TestConstants.IterationCount);
-
+            ReadFromItems(TestConstants.IterationCount);
+            RecordToItems(TestConstants.IterationCount);
             return _testResults;
         }
 
@@ -75,6 +77,37 @@ namespace CollectionsTest
             _testRunner.RemoveItemsFromCollection(removeItemCount);
             _testResults.DelTimeMs = StopTimerAndGetTime();
         }
+
+        private void ReadFromItems(int itemCount)
+        {
+            try
+            {
+                StartTimer();
+                _testRunner.ReadValueFromItems(itemCount);
+                _testResults.ReadTimeMs = StopTimerAndGetTime();
+            }
+
+            catch (NotImplementedException) 
+            {
+                _testResults.ReadTimeMs = null;
+            }
+        }
+
+        private void RecordToItems(int itemCount)
+        {
+            try
+            {
+                StartTimer();
+                _testRunner.RecordValueToItems(itemCount);
+                _testResults.WriteTimeMs = StopTimerAndGetTime();
+            }
+
+            catch (NotImplementedException)
+            {
+                _testResults.WriteTimeMs = null;
+            }
+        }
+ 
         
         private void StartTimer()
         {
@@ -110,7 +143,7 @@ namespace CollectionsTest
 
             if (collection is IList<int>)
             {
-                _testRunner = new CollectionProcessor(collection as IList<int>); 
+                _testRunner = new ListProcessor(collection as IList<int>); 
                 return;
             }
 

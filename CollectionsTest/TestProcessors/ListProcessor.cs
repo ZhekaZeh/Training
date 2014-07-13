@@ -4,7 +4,7 @@ using CollectionsTest.Interfaces;
 
 namespace CollectionsTest
 {
-    public class CollectionProcessor : ITestProcessor
+    public class ListProcessor : ITestProcessor
     {
         #region Private members
 
@@ -14,7 +14,7 @@ namespace CollectionsTest
 
         #region Constructor
 
-        public CollectionProcessor(IList<int> collection)
+        public ListProcessor(IList<int> collection)
         {
             _collection = collection;
         }
@@ -47,12 +47,30 @@ namespace CollectionsTest
 
         public void RemoveItemsFromCollection(int itemCount)
         {
+            for (int i = itemCount; i < 0; i--)
+            {
+                _collection.RemoveAt(i);
+            }
+        }
+
+        public void ReadValueFromItems(int itemCount)
+        {
+            object _temp;
             for (int i = 0; i < itemCount; i++)
             {
-                _collection.Remove(i);
+                _temp = _collection[i];
+            }
+        }
+
+        public void RecordValueToItems(int itemCount)
+        {
+            for (int i = 0; i < itemCount; i++)
+            {
+                _collection[i] = i++;
             }
         }
 
         #endregion
+
     }
 }

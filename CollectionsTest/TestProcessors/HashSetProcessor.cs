@@ -57,11 +57,17 @@ namespace CollectionsTest.TestProcessors
                 }
             }
 
+            public void ReadValueFromItems(int itemCount)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void RecordValueToItems(int itemCount)
+            {
+                throw new NotImplementedException();
+            }
 
             #endregion
-
-
-
 
     }
 }

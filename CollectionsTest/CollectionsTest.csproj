@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestProcessors\CollectionProcessor.cs" />
+    <Compile Include="TestProcessors\ListProcessor.cs" />
     <Compile Include="CollectionTestRunner.cs" />
     <Compile Include="TestProcessors\DictionaryProcessor.cs" />
     <Compile Include="Interfaces\ITestProcessor.cs" />
