@@ -89,7 +89,7 @@ namespace CollectionsTest
 
             catch (NotImplementedException) 
             {
-                _testResults.ReadTimeMs = null;
+                _testResults.ReadTimeMs = -1;
             }
         }
 
@@ -104,7 +104,7 @@ namespace CollectionsTest
 
             catch (NotImplementedException)
             {
-                _testResults.WriteTimeMs = null;
+                _testResults.WriteTimeMs = -1;
             }
         }
  
