@@ -55,7 +55,11 @@ namespace CollectionsTest.TestProcessors
 
         public void ReadValueFromItems(int itemCount)
         {
-            throw new NotImplementedException();
+            object _temp;
+            for (int i = 0; i < itemCount; i++)
+            {
+                _temp = _collection.Pop();
+            }
         }
 
         public void RecordValueToItems(int itemCount)
