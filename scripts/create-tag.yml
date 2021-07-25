@@ -1,10 +1,12 @@
 ---
 platform: linux
-
 image_resource:
-  type: docker-image
-  source: {repository: busybox}
-  
+    type: docker-image
+    source:
+        repository: bams-aws.refinitiv.com:5001/a250232/docker-builder
+        tag: 1.0.30
+        username: ((vault:kv/concourse-ci-ui.sa-csa-bams-username))
+        password: ((vault:kv/concourse-ci-ui.sa-csa-bams-password))
 outputs:
     - name: output-folder
 run:
@@ -13,4 +15,4 @@ run:
     args:
         - -exc
         - |
-            echo "${VERSION}-build" > output-folder/output
+            echo "${VERSION}{SUFFIX}" > output-folder/output
